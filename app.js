@@ -25,6 +25,10 @@ app.post('/', (req, res) => {
     res.render('index', { deviceId, country });
 });
 
+app.get('/health', async (req, res) => {
+    return res.json({"healthAt":new Date().toISOString()});
+});
+
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
