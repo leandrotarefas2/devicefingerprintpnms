@@ -2,7 +2,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 8080;
 
 // Define EJS como engine de visualização
 app.set('view engine', 'ejs');
