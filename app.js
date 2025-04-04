@@ -25,8 +25,15 @@ app.post('/', (req, res) => {
     res.render('index', { deviceId, country });
 });
 
-app.get('/health', async (req, res) => {
-    return res.json({"healthAt":new Date().toISOString()});
+app.get('/prd', (req, res) => {
+    const deviceId = "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"+uuidv4();
+    res.render('pdfp', { deviceId, country:"BR" });
+});
+
+app.post('/prd', (req, res) => {
+    const { country } = req.body;
+    const deviceId = "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"+uuidv4();
+    res.render('pdfp', { deviceId, country });
 });
 
 app.listen(port, () => {

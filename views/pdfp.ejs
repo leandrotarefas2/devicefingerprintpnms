@@ -6,34 +6,34 @@
     <title>Minha Página com EJS</title>
     <link rel="stylesheet" href="/style.css">
     <script type="text/javascript"
-        src="https://api.pre.globalgetnet.com/dpm/digital-platform/antifraud/afdf.js?session=<%= deviceId %>&country=<%= country %>">
+        src="https://api.globalgetnet.com/dpm/digital-platform/antifraud/afdf.js?session=<%= deviceId %>&country=<%= country %>">
         </script>
 </head>
 
 <body>
     <h1>Olá <%= country %>!</h1>
-    <p>Esse é um teste para device fingerprint UAT! 🚀</p>
+    <p>Esse é um teste para device fingerprint PRD! 🚀</p>
     <p><%= deviceId %></p>
     <p>
-        <form method="post" action="/">
+        <form method="post" action="/prd">
             <input type="hidden" name="country" value="BR"/>
             <button type="submit">BR</button>
         </form>
     </p>
     <p>
-        <form method="post" action="/">
+        <form method="post" action="/prd">
             <input type="hidden" name="country" value="CL"/>
             <button type="submit">CL</button>
         </form>
     </p>
     <p>
-        <form method="post" action="/">
+        <form method="post" action="/prd">
             <input type="hidden" name="country" value="MX"/>
             <button type="submit">MX</button>
         </form>
     </p>
     <p>
-        <form method="post" action="/">
+        <form method="post" action="/prd">
             <input type="hidden" name="country" value="AR"/>
             <button type="submit">AR</button>
         </form>
