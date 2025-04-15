@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Página com EJS</title>
+    <link rel="stylesheet" href="/style.css">
+    <script type="text/javascript"
+        src="/release/1.6/geolocation/afdf.js?session=<%= deviceId %>&country=<%= country %>">
+        </script>
+</head>
+
+<body>
+    <h3>Release 1.6 - Geolocation</h3>
+    <h1>Olá <%= country %>!</h1>
+    <p>Esse é um teste para device fingerprint UAT! 🚀</p>
+    <p><%= deviceId %></p>
+    <p>
+        <form method="post" action="/release/1.6/geolocation">
+            <input type="hidden" name="country" value="BR"/>
+            <button type="submit">BR</button>
+        </form>
+    </p>
+    <p>
+        <form method="post" action="/release/1.6/geolocation">
+            <input type="hidden" name="country" value="CL"/>
+            <button type="submit">CL</button>
+        </form>
+    </p>
+    <p>
+        <form method="post" action="/release/1.6/geolocation">
+            <input type="hidden" name="country" value="MX"/>
+            <button type="submit">MX</button>
+        </form>
+    </p>
+    <p>
+        <form method="post" action="/release/1.6/geolocation">
+            <input type="hidden" name="country" value="AR"/>
+            <button type="submit">AR</button>
+        </form>
+    </p>
+
+</body>
+
+</html>

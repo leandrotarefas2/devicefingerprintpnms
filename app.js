@@ -36,6 +36,28 @@ app.post('/prd', (req, res) => {
     res.render('pdfp', { deviceId, country });
 });
 
+app.get('/release/1.6/', (req, res) => {
+    const deviceId = "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"+uuidv4();
+    res.render('release/1.6/index', { deviceId, country:"BR" });
+});
+
+app.post('/release/1.6/', (req, res) => {
+    const { country } = req.body;
+    const deviceId = "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"+uuidv4();
+    res.render('release/1.6/index', { deviceId, country });
+});
+
+app.get('/release/1.6/geolocation', (req, res) => {
+    const deviceId = "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"+uuidv4();
+    res.render('release/1.6/geolocation', { deviceId, country:"BR" });
+});
+
+app.post('/release/1.6/geolocation', (req, res) => {
+    const { country } = req.body;
+    const deviceId = "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"+uuidv4();
+    res.render('release/1.6/geolocation', { deviceId, country });
+});
+
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
