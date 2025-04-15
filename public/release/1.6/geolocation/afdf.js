@@ -780,11 +780,9 @@ function carregarGroupIb(params) {
 	console.log("session: " , session);
 	
 	if (typeof window.gib !== 'undefined') {
-		console.log("gib undefined");
 		initFraudProtection(envgib, session);
 	} else {
 		window.onGibLoad = function () { initFraudProtection(envgib, session); };
-		console.log("gib ok!");
 	}
     
 }
