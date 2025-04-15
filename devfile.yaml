@@ -1,0 +1,38 @@
+schemaVersion: 2.2.0
+metadata:
+  name: minha-app-node
+  version: 1.0.0
+  displayName: Minha App Node.js
+  description: Ambiente de desenvolvimento para um app Node.js com EJS
+
+components:
+  - name: nodejs
+    container:
+      image: node:18
+      memoryLimit: 1Gi
+      cpuLimit: 500m
+      mountSources: true
+      command: ['tail']
+      args: ['-f', '/dev/null']
+
+commands:
+  - id: install-deps
+    exec:
+      label: "Instalar dependências"
+      component: nodejs
+      commandLine: "npm install"
+      workingDir: ${PROJECT_SOURCE}
+      group:
+        kind: build
+        isDefault: true
+
+  - id: start-app
+    exec:
+      label: "Iniciar aplicação"
+      component: nodejs
+      commandLine: "npm start"
+      workingDir: ${PROJECT_SOURCE}
+      group:
+        kind: run
+        isDefault: true
+
